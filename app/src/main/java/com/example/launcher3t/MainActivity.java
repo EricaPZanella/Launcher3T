@@ -26,12 +26,14 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
         carregarFragment(new FragmentTelaInicial());
 
 
+
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
         Fragment fragment;
+
 
         switch (menuItem.getItemId()) {
             case R.id.nav_setaesquerda:

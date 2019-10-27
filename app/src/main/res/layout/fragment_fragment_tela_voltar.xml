@@ -7,5 +7,8 @@
     tools:context=".FragmentTelaVoltar">
 
 
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcycler2"
+        android:layout_width="match_parent"
+        android:layout_height="630dp" />
 </LinearLayout>
