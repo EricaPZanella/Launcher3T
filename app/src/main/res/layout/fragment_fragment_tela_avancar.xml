@@ -7,6 +7,12 @@
     tools:context=".FragmentTelaAvancar">
 
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="avancar" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcycler3"
         android:layout_width="match_parent"

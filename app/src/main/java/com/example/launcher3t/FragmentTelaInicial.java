@@ -2,12 +2,15 @@ package com.example.launcher3t;
 
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -34,39 +37,40 @@ public class FragmentTelaInicial extends Fragment {
     List<ApplicationInfo> applicationInfoList;
     ArrayList<AppInfo> aplicativosList;
     AppInfoArrayAdapter mAdapter;
-    //Declara um atributo para guardar o context.
+
     Context context;
     GridLayoutManager layoutManager;
 
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        this.view = view;
+        init();
     }
 
+    private void init(){
+        recyclerView = view.findViewById(R.id.rcycler1);
+        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
+
+
+        aplicativosList=loadAppInf("");
+        mAdapter  = new AppInfoArrayAdapter(getContext(),R.layout.item_list_app, aplicativosList);
+        recyclerView.setAdapter(mAdapter);
+
+    }
 
     public FragmentTelaInicial() {
         // Required empty public constructor
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_fragment_tela_inicial, container, false);
 
-
-        layoutManager = new GridLayoutManager(getContext(), 2);
-        recyclerView.setLayoutManager(layoutManager);
-
-        recyclerView = view.findViewById(R.id.rcycler1);
-
+        //layoutManager = new GridLayoutManager(getContext(), 2);
 
         //appInfoArrayList = obterContexto(getContext());
-        aplicativosList=loadAppInf("");
-        mAdapter  = new AppInfoArrayAdapter(getContext(),R.layout.item_list_app, aplicativosList);
-        recyclerView.setAdapter(mAdapter);
-
 
         return view;
     }

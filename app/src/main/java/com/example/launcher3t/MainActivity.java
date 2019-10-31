@@ -2,12 +2,16 @@ package com.example.launcher3t;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.Window;
 import android.widget.FrameLayout;
+import android.widget.Toolbar;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomnavigation.BottomNavigationView.OnNavigationItemSelectedListener;
@@ -15,6 +19,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView.OnNavig
 public class MainActivity extends AppCompatActivity implements OnNavigationItemSelectedListener {
 
     private BottomNavigationView bottomNavigationView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,37 +30,38 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         carregarFragment(new FragmentTelaInicial());
 
-
-
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
         Fragment fragment;
+        Window w = getWindow();
+        int id = menuItem.getItemId();
 
-
-        switch (menuItem.getItemId()) {
-            case R.id.nav_setaesquerda:
-               //bottomNavigationView.setItemBackgroundResource(R.color.colorNave);
-                fragment = new FragmentTelaVoltar();
-                carregarFragment(fragment);
-                return true;
-            case R.id.nav_telainicial:
-                //bottomNavigationView.setItemBackgroundResource(colorPrimary);
-                fragment = new FragmentTelaInicial();
-                carregarFragment(fragment);
-                return true;
-            case R.id.nav_setadireita:
-                //bottomNavigationView.setItemBackgroundResource(R.color.colorRed);
-                fragment = new FragmentTelaVoltar();
-                carregarFragment(fragment);
-                return true;
+        if(id == R.id.nav_setaesquerda){
+            //bottomNavigationView.setItemBackgroundResource(R.color.colorNave);
+            fragment = new FragmentTelaVoltar();
+            carregarFragment(fragment);
 
         }
+        else if(id == R.id.nav_telainicial) {
+            //bottomNavigationView.setItemBackgroundResource(colorPrimary);
+            fragment = new FragmentTelaInicial();
+            carregarFragment(fragment);
 
-        return false;
+        }
+        else if (id == R.id.nav_setadireita){
+           //bottomNavigationView.setItemBackgroundResource(R.color.colorRed);
+           fragment = new FragmentTelaAvancar();
+           carregarFragment(fragment);
+
+        }
+        //toolbar.setTitle(barra); //adicione essa linha
+        return true;
     }
+
+
 
     private void carregarFragment(Fragment fragment){
 
