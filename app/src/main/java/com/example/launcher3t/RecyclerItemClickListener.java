@@ -9,7 +9,7 @@ import android.widget.AdapterView;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-public class RecyclerItemClickListenerTelaInicial implements RecyclerView.OnItemTouchListener {
+public class RecyclerItemClickListener implements RecyclerView.OnItemTouchListener {
 
     private OnItemClickListener mListener;
     GestureDetector mGestureDetector;
@@ -39,7 +39,7 @@ public class RecyclerItemClickListenerTelaInicial implements RecyclerView.OnItem
         public void onLongItemClick(View view, int position);
     }
 
-    public RecyclerItemClickListenerTelaInicial(Context context, final RecyclerView recyclerView, OnItemClickListener listener) {
+    public RecyclerItemClickListener(Context context, final RecyclerView recyclerView, OnItemClickListener listener) {
         mListener = listener;
         mGestureDetector = new GestureDetector(context, new GestureDetector.SimpleOnGestureListener() {
             @Override

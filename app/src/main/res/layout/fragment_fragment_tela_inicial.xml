@@ -18,4 +18,5 @@
         android:layout_height="630dp" >
 
     </androidx.recyclerview.widget.RecyclerView>
+
 </LinearLayout>
