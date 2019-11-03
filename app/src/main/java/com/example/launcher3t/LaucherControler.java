@@ -71,7 +71,7 @@ public class LaucherControler {
                     if (appinfo.pname.equals( listaRenaimeTela[i]) ) {
                         appinfo.appname = listaRenaimeTela[i];
 
-                        String NovoCaminho = "@drawable'\'mensagem.bmp";
+                        String NovoCaminho = "@drawable'\'mensagem_old.bmp";
                         //appinfo.appname.equals("Chamadas");
                         //appinfo.icon = Drawable.createFromPath(NovoCaminho);
                         appInfoArrayListResult.add(appinfo);

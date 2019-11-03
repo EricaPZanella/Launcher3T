@@ -36,9 +36,8 @@ public class FragmentTelaInicial extends Fragment {
     ArrayList<AppInfo>  appInfoArrayList;
     ArrayList<AppInfo>  appInfoArrayListResult;
     List<ApplicationInfo> applicationInfoList;
-    //ArrayList<AppInfo> aplicativosList;
+    ArrayList<AppInfo> aplicativosList;
     AppInfoArrayAdapter mAdapter;
-
     Context context;
     GridLayoutManager layoutManager;
 
@@ -54,9 +53,10 @@ public class FragmentTelaInicial extends Fragment {
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
 
 
-        appInfoArrayList=loadAppInf("");
-        mAdapter  = new AppInfoArrayAdapter(getContext(),R.layout.item_list_app, appInfoArrayList);
-        recyclerView.setAdapter(mAdapter);
+        refreshList("");
+        //appInfoArrayList=loadAppInf("");
+        //mAdapter  = new AppInfoArrayAdapter(getContext(),R.layout.item_list_app, appInfoArrayList);
+        //recyclerView.setAdapter(mAdapter);
 
 
         //configurando click do recyclerview.
@@ -96,20 +96,8 @@ public class FragmentTelaInicial extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_fragment_tela_inicial, container, false);
-
-        //layoutManager = new GridLayoutManager(getContext(), 2);
-
-        //appInfoArrayList = obterContexto(getContext());
-
         return view;
     }
-
-
-//    public void obterContexto(Context context){
-//        applicationInfoList = mContext.getPackageManager().getInstalledApplications(0);
-//        appInfoArrayList = new ArrayList<AppInfo>();
-//
-//    }
 
 
     public ArrayList<AppInfo> loadAppInf(final String key) {
@@ -135,7 +123,7 @@ public class FragmentTelaInicial extends Fragment {
 
         String [] listaPacoteAppTela = {"com.google.android.dialer","com.google.android.apps.messaging","com.android.contacts", "com.google.android.deskclock", "com.android.calculator2", "com.google.android.music"};
         String [] listaRenaimeTela = {"Chamadas","Mensagens","Contatos", "Despertador", "Câmera", "Reprodutor de música"};
-        int [] listaRecurosIcones = {R.drawable.mensagem,R.drawable.mensagem,R.drawable.mensagem,R.drawable.mensagem,R.drawable.mensagem,R.drawable.mensagem};
+        int [] listaRecurosIcones = {R.drawable.chamada,R.drawable.mensagem,R.drawable.contato,R.drawable.despertador,R.drawable.camera,R.drawable.musica};
         Drawable [] icons = {null,null,null,null,null,null};
         int i =0;
         ImageView v;
@@ -150,9 +138,7 @@ public class FragmentTelaInicial extends Fragment {
             for ( AppInfo appinfo:appInfoArrayList) {
                 if (appinfo.pname.equals( listaPacoteAppTela[i]) ) {
                     appinfo.appname = listaRenaimeTela[i];
-                    //String NovoCaminho = "@drawable'\'mensagem.bmp";
-                    //appinfo.appname.equals("Chamadas");
-                    appinfo.icon = icons[0];
+                    appinfo.icon = icons[i];
                     appInfoArrayListResult.add(appinfo);
 
                 }
@@ -163,12 +149,12 @@ public class FragmentTelaInicial extends Fragment {
     };
 
 
-//    public void refreshList(String key ){
-//        aplicativosList=loadAppInf(key);
-//        mAdapter  = new AppInfoArrayAdapter(getContext(),
-//                R.layout.item_list_app,
-//                aplicativosList );
-//        recyclerView.setAdapter(mAdapter);
-//    }
+    public void refreshList(String key ){
+        aplicativosList=loadAppInf(key);
+        mAdapter  = new AppInfoArrayAdapter(getContext(),
+                R.layout.item_list_app,
+                aplicativosList );
+        recyclerView.setAdapter(mAdapter);
+    }
 
 }

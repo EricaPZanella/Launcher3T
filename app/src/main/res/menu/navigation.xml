@@ -2,14 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nav_setaesquerda"
-        android:icon="@drawable/ic_setaesquerda"
+        android:icon="@drawable/ic_seta_esquerda"
         android:title="Voltar" />
     <item
         android:id="@+id/nav_telainicial"
-        android:icon="@drawable/ic_telainicial"
+        android:icon="@drawable/ic_inicial"
         android:title="Inicial" />
     <item
         android:id="@+id/nav_setadireita"
-        android:icon="@drawable/ic_setadireita"
+        android:icon="@drawable/ic_seta_direita"
         android:title="Avançar" />
 </menu>

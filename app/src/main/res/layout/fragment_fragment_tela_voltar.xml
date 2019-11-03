@@ -8,13 +8,19 @@
 
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="voltar" />
+        android:layout_height="49dp"
+        android:layout_gravity="center"
+        android:text="Tela 3"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="28dp" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcycler2"
+        android:id="@+id/rcycler1"
         android:layout_width="match_parent"
-        android:layout_height="630dp" />
+        android:layout_height="630dp" >
+
+    </androidx.recyclerview.widget.RecyclerView>
 </LinearLayout>
