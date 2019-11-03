@@ -41,6 +41,17 @@ public class FragmentTelaInicial extends Fragment {
     Context context;
     GridLayoutManager layoutManager;
 
+    public FragmentTelaInicial() {
+        // Required empty public constructor
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        view = inflater.inflate(R.layout.fragment_fragment_tela_inicial, container, false);
+        return view;
+    }
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -87,18 +98,6 @@ public class FragmentTelaInicial extends Fragment {
 
 
     }
-
-    public FragmentTelaInicial() {
-        // Required empty public constructor
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_fragment_tela_inicial, container, false);
-        return view;
-    }
-
 
     public ArrayList<AppInfo> loadAppInf(final String key) {
         //applicationInfoList = mContext.getPackageManager().getInstalledApplications(0);

@@ -10,15 +10,16 @@
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
-        android:layout_height="664dp"
+        android:layout_height="600dp"
         android:layout_weight="4"></FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-
-        app:itemIconSize="30dp"
+        android:layout_height="65dp"
+        app:itemIconSize="50dp"
+        app:labelVisibilityMode="unlabeled"
+        app:elevation="@dimen/cardview_default_elevation"
         app:menu="@menu/navigation"></com.google.android.material.bottomnavigation.BottomNavigationView>
 
 

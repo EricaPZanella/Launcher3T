@@ -3,13 +3,16 @@
     <item
         android:id="@+id/nav_setaesquerda"
         android:icon="@drawable/ic_seta_esquerda"
-        android:title="Voltar" />
+        android:title="@string/voltar"/>
     <item
         android:id="@+id/nav_telainicial"
         android:icon="@drawable/ic_inicial"
-        android:title="Inicial" />
+        android:title="@string/inicial"
+
+        />
     <item
         android:id="@+id/nav_setadireita"
         android:icon="@drawable/ic_seta_direita"
-        android:title="Avançar" />
+        android:title="@string/avancar"
+         />
 </menu>

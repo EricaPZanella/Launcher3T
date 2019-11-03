@@ -30,24 +30,26 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         carregarFragment(new FragmentTelaInicial());
 
+
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
         Fragment fragment;
-        Window w = getWindow();
         int id = menuItem.getItemId();
 
-        if(id == R.id.nav_setaesquerda){
+        if(id == R.id.nav_telainicial){
             //bottomNavigationView.setItemBackgroundResource(R.color.colorNave);
-            fragment = new FragmentTelaVoltar();
+            fragment = new FragmentTelaInicial();
+
+            //bottomNavigationView.MenuItem#setChecked="true";
             carregarFragment(fragment);
 
         }
-        else if(id == R.id.nav_telainicial) {
+        else if(id == R.id.nav_setaesquerda) {
             //bottomNavigationView.setItemBackgroundResource(colorPrimary);
-            fragment = new FragmentTelaInicial();
+            fragment = new FragmentTelaVoltar();
             carregarFragment(fragment);
 
         }
@@ -57,7 +59,6 @@ public class MainActivity extends AppCompatActivity implements OnNavigationItemS
            carregarFragment(fragment);
 
         }
-        //toolbar.setTitle(barra); //adicione essa linha
         return true;
     }
 

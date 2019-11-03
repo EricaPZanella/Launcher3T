@@ -19,7 +19,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcycler1"
         android:layout_width="match_parent"
-        android:layout_height="630dp" >
+        android:layout_height="616dp">
 
     </androidx.recyclerview.widget.RecyclerView>
 
