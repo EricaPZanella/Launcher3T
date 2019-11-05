@@ -17,8 +17,7 @@
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
         android:layout_height="65dp"
-        app:itemIconSize="50dp"
-        app:labelVisibilityMode="unlabeled"
+        app:itemIconSize="30dp"
         app:elevation="@dimen/cardview_default_elevation"
         app:menu="@menu/navigation"></com.google.android.material.bottomnavigation.BottomNavigationView>
 
